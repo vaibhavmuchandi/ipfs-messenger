@@ -1,0 +1,30 @@
+{
+  "name": "ipfs-messenger",
+  "version": "1.0.0",
+  "description": "IPFS helper packager for communication between two ipfs peers using ipfs-pubsub. Ideal for server-to-server communication.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rm -rf ./messenger-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/vaibhavmuchandi/ipfs-messenger"
+  },
+  "keywords": [
+    "ipfs",
+    "libp2p",
+    "messaging",
+    "server",
+    "to",
+    "server",
+    "communication"
+  ],
+  "author": "0xvaibhav (www.twitter.com/0xvaibhav)",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^3.3.0",
+    "ipfs-core": "^0.16.0"
+  }
+}
