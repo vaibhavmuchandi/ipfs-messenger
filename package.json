@@ -1,5 +1,5 @@
 {
-  "name": "ipfs-messenger",
+  "name": "@0xvaibhav/ipfs-messenger",
   "version": "1.0.0",
   "description": "IPFS helper packager for communication between two ipfs peers using ipfs-pubsub. Ideal for server-to-server communication.",
   "main": "index.js",
@@ -26,5 +26,9 @@
   "dependencies": {
     "events": "^3.3.0",
     "ipfs-core": "^0.16.0"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {}
 }
