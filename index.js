@@ -4,7 +4,7 @@ import {
   removeChannel,
   sendMessage,
   decodeMessage,
-} from "../utils/utils.js";
+} from "./utils/utils.js";
 class Messenger {
   constructor(ipfs, options) {
     this.events = new EventEmitter();
