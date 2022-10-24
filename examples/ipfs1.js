@@ -1,6 +1,6 @@
 import * as IPFS from "ipfs-core";
 import config from "./ipfs-conf.js";
-import Messenger from "../src/Messenger.js";
+import Messenger from "../index.js";
 
 (async () => {
   const ipfs = await IPFS.create(config.config1);

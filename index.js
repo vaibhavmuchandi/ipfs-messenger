@@ -78,8 +78,6 @@ class Messenger {
   };
 
   send = async (toAddress, message) => {
-    if (!this._channels.includes(toAddress))
-      throw new Error("No channel found with this address.");
     await sendMessage(this._ipfs, toAddress, message);
     this.events.emit("sent", true);
   };
