@@ -1,6 +1,6 @@
 {
   "name": "@0xvaibhav/ipfs-messenger",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "IPFS helper packager for communication between two ipfs peers using ipfs-pubsub. Ideal for server-to-server communication.",
   "main": "index.js",
   "type": "module",

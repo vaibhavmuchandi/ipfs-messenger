@@ -41,7 +41,7 @@ class Messenger {
     address[2] = ip4;
     const externalAddress = address.join("/");
     this._address = externalAddress;
-    console.log("Swarm listening on ", this._address);
+    console.log("Listening for messages on ", this._address);
   };
 
   _receivedMessage = async (message) => {
@@ -57,9 +57,7 @@ class Messenger {
       this._receivedMessage
     );
     this.events.emit("start", {
-      message: `Listening for messages on ${identity.addresses[0].toString()}\nListening for messages on ${
-        this._address
-      }`,
+      message: `Listening for messages on ${identity.addresses[0].toString()}`,
     });
   };
 
