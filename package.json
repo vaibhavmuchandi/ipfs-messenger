@@ -25,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "events": "^3.3.0",
+    "getipify": "^1.0.2",
     "ipfs-core": "^0.16.0"
   },
   "directories": {

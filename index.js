@@ -5,6 +5,8 @@ import {
   sendMessage,
   decodeMessage,
 } from "./utils/utils.js";
+
+import { ipv4 } from "getipify";
 class Messenger {
   constructor(ipfs, options) {
     this.events = new EventEmitter();
@@ -12,6 +14,8 @@ class Messenger {
     this._options = options;
     this._channels = [];
     this._identity = null;
+    this._address = "";
+    this._getAddress();
   }
 
   get ipfs() {
@@ -30,6 +34,16 @@ class Messenger {
     return this._identity;
   }
 
+  _getAddress = async () => {
+    const ip4 = await ipv4();
+    const ipfsInternal = await this._ipfs.id();
+    const address = ipfsInternal.addresses[0].toString().split("/");
+    address[2] = ip4;
+    const externalAddress = address.join("/");
+    this._address = externalAddress;
+    console.log("Swarm listening on ", this._address);
+  };
+
   _receivedMessage = async (message) => {
     const decodedMessage = await decodeMessage(message.data);
     this.events.emit("message", { data: decodedMessage });
@@ -43,7 +57,9 @@ class Messenger {
       this._receivedMessage
     );
     this.events.emit("start", {
-      message: `Listening for messages on ${identity.addresses[0].toString()}`,
+      message: `Listening for messages on ${identity.addresses[0].toString()}\nListening for messages on ${
+        this._address
+      }`,
     });
   };
 
